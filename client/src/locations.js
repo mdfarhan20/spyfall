@@ -56,4 +56,9 @@ const spy = {
     src: "images/spy.jpg"
 }
 
-export { locations, spy };
+const hide = {
+    name: "Hidden",
+    src: "images/hidden.jpg"
+}
+
+export { locations, spy, hide };

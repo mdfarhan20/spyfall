@@ -10,6 +10,8 @@ function Lobby({ player, roomCode, isHost, setGameStarted, setLocation, isReady,
     useEffect(() => {
         setIsReady(false);
 
+        socket.emit("joined-lobby", roomCode);
+
         socket.on("lobby-update", (players) => {
             const otherPlayers = players.filter(pl => pl.username !== player.username);
             setPlayersInLobby(otherPlayers);
@@ -17,8 +19,6 @@ function Lobby({ player, roomCode, isHost, setGameStarted, setLocation, isReady,
             if (isHost)
                 handleGameTimeChange();
         });
-
-        socket.emit("joined-lobby", roomCode);
 
         socket.on("chosen-spy", () => {
             socket.isSpy = true;
