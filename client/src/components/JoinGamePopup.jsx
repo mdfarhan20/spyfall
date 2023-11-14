@@ -8,7 +8,7 @@ function JoinGamePopup({ joinGameRef, handleJoinGame, handleModalClose }) {
         <dialog ref={joinGameRef} onClick={handleModalClose} className="rounded-lg">
             <form 
                 method="dialog"
-                onSubmit={() => handleJoinGame(nameInputRef.current.value, roomInputRef.current.value)}
+                onSubmit={() => handleJoinGame(nameInputRef.current.value, roomInputRef.current.value.toUpperCase())}
                 className="popup-form"
             >
                 <label htmlFor="name" className="text-xl">What's your name?</label>
