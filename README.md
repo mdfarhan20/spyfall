@@ -12,7 +12,7 @@ This is a recreation of the game spyfall with custom locations using React.js an
 
 ![](./screenshot.jpg)
 
-Live Site URL:  [Play Spyfall here](https://intro-dropdown-nav-subsurf.netlify.app/)
+Live Site URL:  [Play Spyfall here](https://mdfarhan20.github.io/spyfall/)
 
 
 ## Built with
