@@ -35,6 +35,8 @@ function App() {
     <>
         <Navbar />
 
+        { !isConnected && <p className="grow grid place-content-center">Connecting to server...</p> }
+
         { isConnected && !roomCode && 
           <Home 
             isConnected={isConnected}
