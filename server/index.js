@@ -41,7 +41,10 @@ io.on("connection", socket => {
         }
     });
 
-    socket.on("joined-lobby", (room) => updateLobby(room));
+    socket.on("joined-lobby", (room) => {
+        socket.isReady = false;
+        updateLobby(room);
+    });
 
     socket.on("player-ready", (room) => {
         socket.isReady = !socket.isReady;

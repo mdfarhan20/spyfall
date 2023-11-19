@@ -8,8 +8,6 @@ function Lobby({ player, roomCode, isHost, setGameStarted, setLocation, isReady,
     const gameTimeRef = useRef();
 
     useEffect(() => {
-        setIsReady(false);
-
         socket.emit("joined-lobby", roomCode);
 
         socket.on("lobby-update", (players) => {
@@ -34,13 +32,10 @@ function Lobby({ player, roomCode, isHost, setGameStarted, setLocation, isReady,
 
         socket.on("game-time-updated", (time) => setGameTime(time));
     }, []);
-
-    useEffect(() => {
-        socket.emit("player-ready", roomCode);
-    }, [isReady]);
-
+    
     const handlePlayerReady = () => {
         setIsReady(!isReady);
+        socket.emit("player-ready", roomCode);
     }
 
     const handleGameStart = () => {
