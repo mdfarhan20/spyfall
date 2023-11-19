@@ -41,13 +41,33 @@ const locations = [
     },
     {
         id: 8,
-        name: "warzone",
+        name: "Warzone",
         src: "images/warzone.jpg" 
     },
     {
         id: 9,
         name: "Submarine",
         src: "images/submarine.jpg" 
+    },
+    {
+        id: 10,
+        name: "Bermuda Triangle",
+        src: "images/bermuda-triangle.jpg" 
+    },
+    {
+        id: 11,
+        name: "Deadly Forest",
+        src: "images/deadly-forest.jpg" 
+    },
+    {
+        id: 12,
+        name: "Jurassic Park",
+        src: "images/jurassic-park.jpg" 
+    },
+    {
+        id: 13,
+        name: "North Pole",
+        src: "images/north-pole.jpg" 
     },
 ]
 

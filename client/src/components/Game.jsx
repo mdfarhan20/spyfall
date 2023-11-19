@@ -25,6 +25,10 @@ function Game({ roomCode, setRoomCode, location, setGameStarted, gameTime, isHos
             alert("Host disconnected!!");
         });
 
+        socket.on("game-ended", () => {
+            gameEndPopup.current.showModal();
+        });
+
         return () => {
             clearInterval(timer);
         };
@@ -41,7 +45,7 @@ function Game({ roomCode, setRoomCode, location, setGameStarted, gameTime, isHos
     }
 
     function gameEnd() {
-        gameEndPopup.current.showModal();
+        socket.emit("end-game", roomCode);
     }
 
     function handleLobbyReturn() {

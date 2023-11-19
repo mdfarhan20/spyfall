@@ -71,6 +71,10 @@ io.on("connection", socket => {
         }
     }
 
+    socket.on("end-game", (room) => {
+        io.to(room).emit("game-ended");
+    });
+
     socket.on("disconnecting", () => {
         const rooms = [...socket.rooms];
         rooms.forEach(room => {
